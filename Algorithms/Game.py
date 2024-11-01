@@ -381,21 +381,6 @@ def background_starrynight():
     drawpoints(points, 2, 1, 16)
     fill(points, 2, 1, 16, 350 -1)
 
-    pass
-
-#mouse listener
-def mouseListener(button, state, x, y):	#/#/x, y is the x-y of the screen (2D)
-    global score, freeze, enemy
-    if button==GLUT_LEFT_BUTTON:
-        if(state == GLUT_DOWN):    # // 2 times?? in ONE click? -- solution is checking DOWN or UP
-            x-=640
-            y-=360
-
-            print(x,-y)
-            f=open("mountain.txt", "a")
-            s=f"({x},{-y}),\n"
-            f.write(s)
-            f.close()
 
 
 
@@ -474,7 +459,7 @@ glutIdleFunc(animate)	#what you want to do in the idle time (when no drawing is 
 
 # glutKeyboardFunc(keyboardListener)
 # glutSpecialFunc(specialKeyListener)
-glutMouseFunc(mouseListener)
+# glutMouseFunc(mouseListener)
 
 glutMainLoop()		#The main loop of OpenGL
 
